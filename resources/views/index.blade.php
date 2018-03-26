@@ -13,10 +13,12 @@
 <body>
 <nav class="navbar navbar-light bg-light justify-content-between ">
     <a class="navbar-brand" href="{{ route('main') }}">Products</a>
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline" method="post" action="{{route('search')}}">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search_data">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
+
 </nav>
 <div class="container-fluid ">
     <div class="row">

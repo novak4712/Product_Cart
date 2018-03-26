@@ -13,24 +13,29 @@
 
 Route::get('/', 'MainController@index')->name('main');
 
-Route::match(['get', 'post'],'/Processors/{id}', [
+Route::get('/Processors/{id}', [
     'uses' => 'ProcessorsController@index',
     'as' => 'Processors'
 ]);
-Route::match(['get', 'post'],'/OneProcessor/{id}', [
+Route::get('/OneProcessor/{id}', [
     'uses' => 'ProcessorsController@show',
     'as' => 'OneProcessor'
 ]);
 
-Route::match(['get', 'post'],'/Video/{id}', [
+Route::get('/Video/{id}', [
     'uses' => 'VideoController@index',
     'as' => 'Video'
 ]);
-Route::match(['get', 'post'],'/Motherboards/{id}', [
+Route::get('/Motherboards/{id}', [
     'uses' => 'MotherboardController@index',
     'as' => 'Motherboards'
 ]);
-Route::match(['get', 'post'],'/Hard/{id}', [
+Route::get('/Hard/{id}', [
     'uses' => 'HardController@index',
     'as' => 'Hard'
+]);
+
+Route::Post('/search', [
+    'uses' => 'MainController@search',
+    'as' => 'search'
 ]);

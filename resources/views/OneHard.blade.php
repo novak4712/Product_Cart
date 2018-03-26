@@ -21,12 +21,11 @@
     <div class="container">
         <div class="row">
             @foreach($relations as $relation)
-                <div class="card col-3" style="width: 18rem; margin: 10px;">
+                <div class="card col-2" style="width: 18rem; margin: 10px;">
                     <img class="card-img-top" src="{{ asset("$relation->image") }}." alt="Card image cap"
                          style="width: 50%; align-self: center; margin: 5px;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $relation->name }}</h5>
-                        <p class="card-text">{{ $relation->description }}</p>
                         <a href="{{ route('OneProcessor', ['id' => $relation->id]) }}" class="btn btn-primary">открыть</a>
                     </div>
                 </div>
