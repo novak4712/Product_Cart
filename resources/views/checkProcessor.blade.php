@@ -22,17 +22,17 @@
 @endsection
 @section('checkbox')
     <h6>Фильтр:</h6>
-    <form action="{{ route('checkVideo') }}" method="post">
+    <form action="{{ route('checkProcessor') }}" method="post">
         <div>
-            <input type="checkbox" value="Gigabyte"  name="Gigabyte">
+            <input type="checkbox" value="AMD"  name="AMD" {{ $amd_checked }}>
             <label  >
-                Gigabyte ({{ $gigabyte }})
+                AMD ({{ $amd }})
             </label>
         </div>
         <div>
-            <input type="checkbox" value="Sapphire"  name="Sapphire">
+            <input type="checkbox" value="Intel"  name="Intel" {{ $intel_checked }}>
             <label >
-                Sapphire ({{ $sapphire }})
+                Intel ({{ $intel }})
             </label>
         </div>
         <div>
@@ -40,4 +40,5 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </div>
     </form>
+
 @endsection

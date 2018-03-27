@@ -12,9 +12,10 @@ class MotherboardController extends Controller
 
         $categories = Category::all();
         $products = Product::where('category_id', '=', $id)->get();
+        $asus = count(Product::where('brand', '=', 'Asus')->get());
+        $msi = count(Product::where('brand', '=', 'MSI')->get());
 
 
-
-        return view('Motherboards', compact('products', 'categories'));
+        return view('Motherboards', compact('products', 'categories', 'asus', 'msi'));
     }
 }

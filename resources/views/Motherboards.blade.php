@@ -11,7 +11,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">{{ $product->description }}</p>
-                            <a href="{{ route('OneProcessor', ['id' => $product->id]) }}" class="btn btn-primary">открыть</a>
+                            <a href="{{ route('OneItem', ['id' => $product->id]) }}" class="btn btn-primary">открыть</a>
                         </div>
                     </div>
                 @endforeach
@@ -19,4 +19,25 @@
         </div>
     </div>
 
+@endsection
+@section('checkbox')
+    <h6>Фильтр:</h6>
+    <form action="{{ route('checkMotherboard') }}" method="post">
+            <div>
+                <input type="checkbox" value="Asus"  name="Asus">
+                <label  >
+                    ASUS ({{ $asus }})
+                </label>
+            </div>
+            <div>
+                <input type="checkbox" value="MSI"  name="MSI">
+                <label >
+                    MSI ({{ $msi }})
+                </label>
+            </div>
+            <div>
+                <button  type="submit">подобрать</button>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            </div>
+    </form>
 @endsection

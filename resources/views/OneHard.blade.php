@@ -26,7 +26,7 @@
                          style="width: 50%; align-self: center; margin: 5px;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $relation->name }}</h5>
-                        <a href="{{ route('OneProcessor', ['id' => $relation->id]) }}" class="btn btn-primary">открыть</a>
+                        <a href="{{ route('OneItem', ['id' => $relation->id]) }}" class="btn btn-primary">открыть</a>
                     </div>
                 </div>
             @endforeach

@@ -17,9 +17,9 @@ Route::get('/Processors/{id}', [
     'uses' => 'ProcessorsController@index',
     'as' => 'Processors'
 ]);
-Route::get('/OneProcessor/{id}', [
-    'uses' => 'ProcessorsController@show',
-    'as' => 'OneProcessor'
+Route::get('/OneItem/{id}', [
+    'uses' => 'MainController@show',
+    'as' => 'OneItem'
 ]);
 
 Route::get('/Video/{id}', [
@@ -38,4 +38,20 @@ Route::get('/Hard/{id}', [
 Route::Post('/search', [
     'uses' => 'MainController@search',
     'as' => 'search'
+]);
+Route::Post('/checkProcessor', [
+    'uses' => 'CheckProcessorController@check',
+    'as' => 'checkProcessor'
+]);
+Route::Post('/checkMotherboard', [
+    'uses' => 'CheckMotherboardController@check',
+    'as' => 'checkMotherboard'
+]);
+Route::Post('/checkVideo', [
+    'uses' => 'CheckVideoController@check',
+    'as' => 'checkVideo'
+]);
+Route::Post('/checkHard', [
+    'uses' => 'CheckHardController@check',
+    'as' => 'checkHard'
 ]);

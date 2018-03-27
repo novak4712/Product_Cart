@@ -12,17 +12,12 @@ class ProcessorsController extends Controller
 
         $categories = Category::all();
         $products = Product::where('category_id', '=', $id)->get();
+        $amd = count(Product::where('brand', '=', 'AMD')->get());
+        $intel = count(Product::where('brand', '=', 'Intel')->get());
 
 
 
-        return view('Processors', compact('products', 'categories'));
+        return view('Processors', compact('products', 'categories', 'amd', 'intel'));
     }
-    public function show($id)
-    {
-        $categories = Category::all();
-        $product = Product::find($id);
-        $relations = Product::find($id)->relation()->get();
 
-        return view('OneProcessor', compact('product', 'categories', 'relations'));
-    }
 }

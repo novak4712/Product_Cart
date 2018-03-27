@@ -12,9 +12,10 @@ class HardController extends Controller
 
         $categories = Category::all();
         $products = Product::where('category_id', '=', $id)->get();
+        $wd = count(Product::where('brand', '=', 'WD')->get());
+        $seagate = count(Product::where('brand', '=', 'Seagate')->get());
 
 
-
-        return view('Hard', compact('products', 'categories'));
+        return view('Hard', compact('products', 'categories', 'wd', 'seagate'));
     }
 }

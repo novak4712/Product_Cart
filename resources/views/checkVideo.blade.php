@@ -24,13 +24,13 @@
     <h6>Фильтр:</h6>
     <form action="{{ route('checkVideo') }}" method="post">
         <div>
-            <input type="checkbox" value="Gigabyte"  name="Gigabyte">
+            <input type="checkbox" value="Gigabyte"  name="Gigabyte" {{ $gigabyte_checked }}>
             <label  >
                 Gigabyte ({{ $gigabyte }})
             </label>
         </div>
         <div>
-            <input type="checkbox" value="Sapphire"  name="Sapphire">
+            <input type="checkbox" value="Sapphire"  name="Sapphire" {{ $sapphire_checked }}>
             <label >
                 Sapphire ({{ $sapphire }})
             </label>
@@ -40,4 +40,5 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </div>
     </form>
+
 @endsection

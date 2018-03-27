@@ -14,7 +14,7 @@
 <nav class="navbar navbar-light bg-light justify-content-between ">
     <a class="navbar-brand" href="{{ route('main') }}">Products</a>
     <form class="form-inline" method="post" action="{{route('search')}}">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search_data">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search_data" required>
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
@@ -23,13 +23,14 @@
 <div class="container-fluid ">
     <div class="row">
         <div class="col-2">
-            <div class="list-group" id="list-tab" role="tablist">
+            <div class="list-group" id="list-tab" role="tablist" style="margin-bottom: 30px;">
                 @foreach($categories as $category)
                     <a class="list-group-item list-group-item-action" id="list-home-list"
                        href="{{ route($category->slug, ['id' => $category->id]) }}" role="tab"
                        aria-controls="home">{{ $category->name }}</a>
                 @endforeach
             </div>
+            @yield('checkbox')
         </div>
 
             @yield('content')

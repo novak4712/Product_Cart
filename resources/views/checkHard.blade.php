@@ -22,17 +22,17 @@
 @endsection
 @section('checkbox')
     <h6>Фильтр:</h6>
-    <form action="{{ route('checkVideo') }}" method="post">
+    <form action="{{ route('checkHard') }}" method="post">
         <div>
-            <input type="checkbox" value="Gigabyte"  name="Gigabyte">
+            <input type="checkbox" value="WD"  name="WD" {{ $wd_checked }}>
             <label  >
-                Gigabyte ({{ $gigabyte }})
+                WD ({{ $wd }})
             </label>
         </div>
         <div>
-            <input type="checkbox" value="Sapphire"  name="Sapphire">
+            <input type="checkbox" value="Seagate"  name="Seagate" {{ $seagate_checked }}>
             <label >
-                Sapphire ({{ $sapphire }})
+                Seagate ({{ $seagate }})
             </label>
         </div>
         <div>
@@ -40,4 +40,5 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </div>
     </form>
+
 @endsection
